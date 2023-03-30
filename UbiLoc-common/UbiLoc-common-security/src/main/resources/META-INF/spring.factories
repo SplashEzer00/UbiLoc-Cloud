@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.UbiLoc.common.security.service.TokenService,\
+  com.UbiLoc.common.security.aspect.PreAuthorizeAspect,\
+  com.UbiLoc.common.security.handler.GlobalExceptionHandler

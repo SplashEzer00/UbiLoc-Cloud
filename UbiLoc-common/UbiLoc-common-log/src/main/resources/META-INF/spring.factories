@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.UbiLoc.common.log.service.AsyncLogService,\
+  com.UbiLoc.common.log.aspect.LogAspect
