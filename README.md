@@ -19,26 +19,26 @@
 ## 系统模块
 
 ~~~
-com.ruoyi     
-├── ruoyi-ui              // 前端框架 [80]
-├── ruoyi-gateway         // 网关模块 [8080]
-├── ruoyi-auth            // 认证中心 [9200]
-├── ruoyi-api             // 接口模块
-│       └── ruoyi-api-system                          // 系统接口
-├── ruoyi-common          // 通用模块
-│       └── ruoyi-common-core                         // 核心模块
-│       └── ruoyi-common-datascope                    // 权限范围
-│       └── ruoyi-common-log                          // 日志记录
-│       └── ruoyi-common-redis                        // 缓存服务
-│       └── ruoyi-common-security                     // 安全模块
-│       └── ruoyi-common-swagger                      // 系统接口
-├── ruoyi-modules         // 业务模块
-│       └── ruoyi-system                              // 系统模块 [9201]
-│       └── ruoyi-gen                                 // 代码生成 [9202]
-│       └── ruoyi-job                                 // 定时任务 [9203]
-│       └── ruoyi-file                                // 文件服务 [9300]
-├── ruoyi-visual          // 图形化管理模块
-│       └── ruoyi-visual-monitor                      // 监控中心 [9100]
+com.UbiLoc     
+├── UbiLoc-ui              // 前端框架 [80]
+├── UbiLoc-gateway         // 网关模块 [8080]
+├── UbiLoc-auth            // 认证中心 [9200]
+├── UbiLoc-api             // 接口模块
+│       └── UbiLoc-api-system                          // 系统接口
+├── UbiLoc-common          // 通用模块
+│       └── UbiLoc-common-core                         // 核心模块
+│       └── UbiLoc-common-datascope                    // 权限范围
+│       └── UbiLoc-common-log                          // 日志记录
+│       └── UbiLoc-common-redis                        // 缓存服务
+│       └── UbiLoc-common-security                     // 安全模块
+│       └── UbiLoc-common-swagger                      // 系统接口
+├── UbiLoc-modules         // 业务模块
+│       └── UbiLoc-system                              // 系统模块 [9201]
+│       └── UbiLoc-gen                                 // 代码生成 [9202]
+│       └── UbiLoc-job                                 // 定时任务 [9203]
+│       └── UbiLoc-file                                // 文件服务 [9300]
+├── UbiLoc-visual          // 图形化管理模块
+│       └── UbiLoc-visual-monitor                      // 监控中心 [9100]
 ├──pom.xml                // 公共依赖
 ~~~
 
@@ -66,7 +66,7 @@ com.ruoyi
 16. 在线构建器：拖动表单元素生成相应的HTML代码。
 17. 连接池监视：监视当前系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈。
 
-## 在线体验
+## 开发参考
 
 - admin/admin123  
 - 陆陆续续收到一些打赏，为了更好的体验已用于演示服务器升级。谢谢各位小伙伴。
