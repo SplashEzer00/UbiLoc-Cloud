@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'UbiLoc管理系统',
+  title: 'UbiLoc穿戴式三维动作捕捉与分析系统后台管理系统',
 
   /**
    * 侧边栏主题 深色主题theme-dark，浅色主题theme-light

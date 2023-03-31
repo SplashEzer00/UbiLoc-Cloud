@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <el-row :gutter="20">
-      <!--部门数据-->
+      <!--部门数据
       <el-col :span="4" :xs="24">
         <div class="head-container">
           <el-input
@@ -25,8 +25,9 @@
           />
         </div>
       </el-col>
+      -->
       <!--用户数据-->
-      <el-col :span="20" :xs="24">
+      <el-col :span="23" :xs="24">
         <el-form :model="queryParams" ref="queryForm" :inline="true" v-show="showSearch" label-width="68px">
           <el-form-item label="用户名称" prop="userName">
             <el-input
@@ -135,10 +136,11 @@
 
         <el-table v-loading="loading" :data="userList" @selection-change="handleSelectionChange">
           <el-table-column type="selection" width="50" align="center" />
-          <el-table-column label="用户编号" align="center" prop="userId" />
-          <el-table-column label="用户名称" align="center" prop="userName" :show-overflow-tooltip="true" />
+          <el-table-column label="用户编号" align="center" prop="userId" width="100" />
+          <el-table-column label="用户名" align="center" prop="userName" :show-overflow-tooltip="true" />
           <el-table-column label="用户昵称" align="center" prop="nickName" :show-overflow-tooltip="true" />
-          <el-table-column label="部门" align="center" prop="dept.deptName" :show-overflow-tooltip="true" />
+          <!--<el-table-column label="部门" align="center" prop="dept.deptName" :show-overflow-tooltip="true" />
+          -->
           <el-table-column label="手机号码" align="center" prop="phonenumber" width="120" />
           <el-table-column label="状态" align="center">
             <template slot-scope="scope">
@@ -158,7 +160,7 @@
           <el-table-column
             label="操作"
             align="center"
-            width="160"
+            width="230"
             class-name="small-padding fixed-width"
           >
             <template slot-scope="scope">
@@ -183,7 +185,7 @@
                 icon="el-icon-key"
                 @click="handleResetPwd(scope.row)"
                 v-hasPermi="['system:user:resetPwd']"
-              >重置</el-button>
+              >重置密码</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -203,15 +205,21 @@
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-row>
           <el-col :span="12">
-            <el-form-item label="用户昵称" prop="nickName">
-              <el-input v-model="form.nickName" placeholder="请输入用户昵称" />
+            <el-form-item v-if="form.userId == undefined" label="用户名" prop="userName">
+              <el-input v-model="form.userName" placeholder="请输入用户名称" />
             </el-form-item>
           </el-col>
+          <el-col :span="12">
+            <el-form-item v-if="form.userId == undefined" label="用户密码" prop="password">
+              <el-input v-model="form.password" placeholder="请输入用户密码" type="password" />
+            </el-form-item>
+          </el-col>
+          <!--
           <el-col :span="12">
             <el-form-item label="归属部门" prop="deptId">
               <treeselect v-model="form.deptId" :options="deptOptions" :show-count="true" placeholder="请选择归属部门" />
             </el-form-item>
-          </el-col>
+          </el-col>-->
         </el-row>
         <el-row>
           <el-col :span="12">
@@ -227,13 +235,8 @@
         </el-row>
         <el-row>
           <el-col :span="12">
-            <el-form-item v-if="form.userId == undefined" label="用户名称" prop="userName">
-              <el-input v-model="form.userName" placeholder="请输入用户名称" />
-            </el-form-item>
-          </el-col>
-          <el-col :span="12">
-            <el-form-item v-if="form.userId == undefined" label="用户密码" prop="password">
-              <el-input v-model="form.password" placeholder="请输入用户密码" type="password" />
+            <el-form-item label="用户昵称" prop="nickName">
+              <el-input v-model="form.nickName" placeholder="请输入用户昵称" />
             </el-form-item>
           </el-col>
         </el-row>
@@ -262,6 +265,7 @@
             </el-form-item>
           </el-col>
         </el-row>
+        <!--
         <el-row>
           <el-col :span="12">
             <el-form-item label="岗位">
@@ -290,6 +294,7 @@
             </el-form-item>
           </el-col>
         </el-row>
+        -->
         <el-row>
           <el-col :span="24">
             <el-form-item label="备注">

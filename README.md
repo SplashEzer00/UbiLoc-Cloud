@@ -11,8 +11,12 @@
 
 * 启动redis（eg：F:\redis\redis-server.exe redis.windows.conf）
 * 启动nacos：配置完双击startup.cmd
-* 运行后端Gateway、System、Auth Application
+* 运行后端基本：Gateway、System、Auth Application，其余可根据自行需求选择
 * 运行前端ui：npm run dev（首次需安装：npm install）
+
+* 账号密码：
+    超级管理员：admin/admin123
+    普通用户：user/123456
 
 参考教程：https://blog.csdn.net/m0_64210833/article/details/126683097?ops_request_misc=&request_id=&biz_id=102&utm_term=ruoyi-cloud&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-126683097.142^v76^insert_down38,201^v4^add_ask,239^v2^insert_chatgpt&spm=1018.2226.3001.4187
 
@@ -69,7 +73,7 @@ com.UbiLoc
 ## 开发参考
 
 - admin/admin123  
-- 陆陆续续收到一些打赏，为了更好的体验已用于演示服务器升级。谢谢各位小伙伴。
+
 
 演示地址：http://ruoyi.vip  
 文档地址：http://doc.ruoyi.vip

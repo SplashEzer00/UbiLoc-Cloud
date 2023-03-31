@@ -41,9 +41,9 @@
     -->
     <el-row :gutter="20">
       <el-col :sm="24" :lg="12" style="padding-left: 20px">
-        <h2>UbiLoc后台管理系统</h2>
+        <h2>UbiLoc穿戴式三维动作捕捉与分析系统后台管理系统</h2>
         <p>
-          一直想做一款后台管理系统，看了很多优秀的开源项目但是发现没有合适自己的。于是利用空闲休息时间开始自己写一套后台系统。如此有了UbiLoc管理系统，它基于若依框架开发，可以用于的Web网站管理后台应用程序。所有前端后台代码封装过后十分精简易上手，出错概率低。
+          一直想做一款后台管理系统，看了很多优秀的开源项目但是发现没有合适自己的。于是利用空闲休息时间开始自己写一套后台系统。如此有了UbiLoc穿戴式三维动作捕捉与分析系统管理系统，它基于若依框架开发，可以用于的Web网站管理后台应用程序。所有前端后台代码封装过后十分精简易上手，出错概率低。
         </p>
         <p>
           <b>当前版本:</b> <span>v{{ version }}</span>
@@ -57,15 +57,15 @@
             size="mini"
             icon="el-icon-cloudy"
             plain
-            @click="goTarget('https://gitee.com/y_project/RuoYi-Cloud')"
-            >访问码云</el-button
+            @click="goTarget('https://github.com/SplashEzer00/UbiLoc-Cloud')"
+            >访问github</el-button
           >
           <el-button
             size="mini"
             icon="el-icon-s-home"
             plain
-            @click="goTarget('http://ruoyi.vip')"
-            >访问主页</el-button
+            @click="goTarget('http://www.ubiloc.cn/')"
+            >访问UbiLoc</el-button
           >
         </p>
       </el-col>
