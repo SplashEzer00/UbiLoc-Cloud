@@ -8,6 +8,7 @@
 * 流量控制框架选型Sentinel。
 
 ## 运行
+* 基本配置：mysql，redis，nodejs，nacos
 
 * 启动redis（eg：F:\redis\redis-server.exe redis.windows.conf）
 * 启动nacos：配置完双击startup.cmd
