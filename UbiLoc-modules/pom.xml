@@ -13,6 +13,7 @@
         <module>UbiLoc-gen</module>
         <module>UbiLoc-job</module>
         <module>UbiLoc-file</module>
+        <module>UbiLoc-users</module>
     </modules>
 
     <artifactId>UbiLoc-modules</artifactId>
