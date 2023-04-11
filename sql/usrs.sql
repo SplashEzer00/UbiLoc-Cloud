@@ -25,8 +25,8 @@ create table usrs_peoples (
 -- ----------------------------
 -- 初始化-用户信息表数据
 -- ----------------------------
-insert into sys_user values(1,  'ez', '伊泽',  'ez@163.com', '15888888888', '0', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '0', '127.0.0.1', '2018-03-16 11-33-00',  '2018-03-16 11-33-00',  '2018-03-16 11-33-00', '普通用户');
-insert into sys_user values(2,  'sh', '水花',  'sh@qq.com',  '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '1', '0', '127.0.0.1', '2018-03-16 11-33-00',  '2018-03-16 11-33-00',  '2018-03-16 11-33-00', '会员用户');
+insert into usrs_peoples values(1,  'ez', '伊泽',  'ez@163.com', '15888888888', '0', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '0', '127.0.0.1', '2018-03-16 11-33-00',  '2018-03-16 11-33-00',  '2018-03-16 11-33-00', '普通用户');
+insert into usrs_peoples values(2,  'sh', '水花',  'sh@qq.com',  '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '1', '0', '127.0.0.1', '2018-03-16 11-33-00',  '2018-03-16 11-33-00',  '2018-03-16 11-33-00', '会员用户');
 
 
 create table usrs_pdata (
