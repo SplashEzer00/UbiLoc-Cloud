@@ -42,6 +42,7 @@
           <el-option label="请选择字典生成" value="" />
         </el-select>
       </el-form-item>
+      <!--
       <el-form-item label="头像地址" prop="avatar">
         <el-input
           v-model="queryParams.avatar"
@@ -51,6 +52,7 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
+
       <el-form-item label="密码" prop="password">
         <el-input
           v-model="queryParams.password"
@@ -60,9 +62,39 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
+
+      <el-form-item label="最后登录IP" prop="loginIp">
+        <el-input
+          v-model="queryParams.loginIp"
+          placeholder="请输入最后登录IP"
+          clearable
+          size="small"
+          @keyup.enter.native="handleQuery"
+        />
+        </el-form-item>
+        <el-form-item label="最后登录时间" prop="loginDate">
+        <el-date-picker clearable size="small" style="width: 200px"
+          v-model="queryParams.loginDate"
+          type="date"
+          value-format="yyyy-MM-dd"
+          placeholder="选择最后登录时间">
+        </el-date-picker>
+      </el-form-item>
+      -->
       <el-form-item label="帐号状态" prop="status">
-        <el-select v-model="queryParams.status" placeholder="请选择帐号状态" clearable size="small">
-          <el-option label="请选择字典生成" value="" />
+        <el-select
+          v-model="queryParams.status"
+          placeholder="用户状态"
+          clearable
+          size="small"
+          style="width: 240px"
+        >
+          <el-option
+            v-for="dict in statusOptions"
+            :key="dict.dictValue"
+            :label="dict.dictLabel"
+            :value="dict.dictValue"
+          />
         </el-select>
       </el-form-item>
       <el-form-item label="会员" prop="vip">
@@ -73,23 +105,6 @@
           size="small"
           @keyup.enter.native="handleQuery"
         />
-      </el-form-item>
-      <el-form-item label="最后登录IP" prop="loginIp">
-        <el-input
-          v-model="queryParams.loginIp"
-          placeholder="请输入最后登录IP"
-          clearable
-          size="small"
-          @keyup.enter.native="handleQuery"
-        />
-      </el-form-item>
-      <el-form-item label="最后登录时间" prop="loginDate">
-        <el-date-picker clearable size="small" style="width: 200px"
-          v-model="queryParams.loginDate"
-          type="date"
-          value-format="yyyy-MM-dd"
-          placeholder="选择最后登录时间">
-        </el-date-picker>
       </el-form-item>
       <el-form-item>
         <el-button type="cyan" icon="el-icon-search" size="mini" @click="handleQuery">搜索</el-button>
@@ -147,8 +162,11 @@
       <el-table-column label="用户邮箱" align="center" prop="email" />
       <el-table-column label="手机号码" align="center" prop="phonenumber" />
       <el-table-column label="用户性别" align="center" prop="sex" />
+      <!--
       <el-table-column label="头像地址" align="center" prop="avatar" />
+
       <el-table-column label="密码" align="center" prop="password" />
+      -->
       <el-table-column label="帐号状态" align="center" prop="status" />
       <el-table-column label="会员" align="center" prop="vip" />
       <el-table-column label="最后登录IP" align="center" prop="loginIp" />
@@ -177,7 +195,7 @@
         </template>
       </el-table-column>
     </el-table>
-    
+
     <pagination
       v-show="total>0"
       :total="total"
@@ -202,8 +220,13 @@
           <el-input v-model="form.phonenumber" placeholder="请输入手机号码" />
         </el-form-item>
         <el-form-item label="用户性别" prop="sex">
-          <el-select v-model="form.sex" placeholder="请选择用户性别">
-            <el-option label="请选择字典生成" value="" />
+          <el-select v-model="form.sex" placeholder="请选择">
+            <el-option
+              v-for="dict in sexOptions"
+              :key="dict.dictValue"
+              :label="dict.dictLabel"
+              :value="dict.dictValue"
+            ></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="头像地址" prop="avatar">
@@ -214,25 +237,15 @@
         </el-form-item>
         <el-form-item label="帐号状态">
           <el-radio-group v-model="form.status">
-            <el-radio label="1">请选择字典生成</el-radio>
+            <el-radio
+              v-for="dict in statusOptions"
+              :key="dict.dictValue"
+              :label="dict.dictValue"
+            >{{dict.dictLabel}}</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item label="会员" prop="vip">
           <el-input v-model="form.vip" placeholder="请输入会员" />
-        </el-form-item>
-        <el-form-item label="删除标志" prop="delFlag">
-          <el-input v-model="form.delFlag" placeholder="请输入删除标志" />
-        </el-form-item>
-        <el-form-item label="最后登录IP" prop="loginIp">
-          <el-input v-model="form.loginIp" placeholder="请输入最后登录IP" />
-        </el-form-item>
-        <el-form-item label="最后登录时间" prop="loginDate">
-          <el-date-picker clearable size="small" style="width: 200px"
-            v-model="form.loginDate"
-            type="date"
-            value-format="yyyy-MM-dd"
-            placeholder="选择最后登录时间">
-          </el-date-picker>
         </el-form-item>
         <el-form-item label="备注" prop="remark">
           <el-input v-model="form.remark" type="textarea" placeholder="请输入内容" />
@@ -269,6 +282,8 @@ export default {
       total: 0,
       // 客户信息表格数据
       peoplesList: [],
+      // 状态数据字典
+      statusOptions: [],
       // 弹出层标题
       title: "",
       // 是否显示弹出层
@@ -304,6 +319,9 @@ export default {
   },
   created() {
     this.getList();
+    this.getDicts("sys_normal_disable").then(response => {
+      this.statusOptions = response.data;
+    });
   },
   methods: {
     /** 查询客户信息列表 */
