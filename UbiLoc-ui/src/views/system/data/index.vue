@@ -28,6 +28,7 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
+      <!--
       <el-form-item label="数据1" prop="data1">
         <el-input
           v-model="queryParams.data1"
@@ -82,6 +83,7 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
+      -->
       <el-form-item label="数据状态" prop="status">
         <el-select v-model="queryParams.status" placeholder="请选择数据状态" clearable size="small">
           <el-option label="请选择字典生成" value="" />
@@ -168,7 +170,7 @@
         </template>
       </el-table-column>
     </el-table>
-    
+
     <pagination
       v-show="total>0"
       :total="total"
