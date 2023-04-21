@@ -241,6 +241,7 @@
           </el-col>
         </el-row>
         <el-row>
+          <!--
           <el-col :span="12">
             <el-form-item label="用户性别">
               <el-select v-model="form.sex" placeholder="请选择">
@@ -253,6 +254,7 @@
               </el-select>
             </el-form-item>
           </el-col>
+          -->
           <el-col :span="12">
             <el-form-item label="状态">
               <el-radio-group v-model="form.status">

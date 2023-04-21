@@ -84,9 +84,14 @@
         />
       </el-form-item>
       -->
-      <el-form-item label="数据状态" prop="status">
-        <el-select v-model="queryParams.status" placeholder="请选择数据状态" clearable size="small">
-          <el-option label="请选择字典生成" value="" />
+      <el-form-item label="状态" prop="status">
+        <el-select v-model="queryParams.status" placeholder="数据状态" clearable size="small">
+          <el-option
+            v-for="dict in statusOptions"
+            :key="dict.dictValue"
+            :label="dict.dictLabel"
+            :value="dict.dictValue"
+          />
         </el-select>
       </el-form-item>
       <el-form-item>
@@ -149,7 +154,16 @@
       <el-table-column label="数据4" align="center" prop="data4" />
       <el-table-column label="数据5" align="center" prop="data5" />
       <el-table-column label="数据6" align="center" prop="data6" />
-      <el-table-column label="数据状态" align="center" prop="status" />
+      <el-table-column label="数据状态" align="center" prop="status">
+        <template slot-scope="scope">
+          <el-switch
+            v-model="scope.row.status"
+            active-value="0"
+            inactive-value="1"
+            @change="handleStatusChange(scope.row)"
+          ></el-switch>
+        </template>
+      </el-table-column>
       <el-table-column label="备注" align="center" prop="remark" />
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
@@ -211,7 +225,11 @@
         </el-form-item>
         <el-form-item label="数据状态">
           <el-radio-group v-model="form.status">
-            <el-radio label="1">请选择字典生成</el-radio>
+            <el-radio
+              v-for="dict in statusOptions"
+              :key="dict.dictValue"
+              :label="dict.dictValue"
+            >{{dict.dictLabel}}</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item label="备注" prop="remark">
@@ -227,7 +245,7 @@
 </template>
 
 <script>
-import { listData, getData, delData, addData, updateData } from "@/api/system/data";
+import { listData, getData, delData, addData, updateData, changeUserStatus } from "@/api/system/data";
 
 export default {
   name: "Data",
@@ -247,6 +265,8 @@ export default {
       showSearch: true,
       // 总条数
       total: 0,
+      // 状态数据字典
+      statusOptions: [],
       // 客户数据表格数据
       dataList: [],
       // 弹出层标题
@@ -257,16 +277,16 @@ export default {
       queryParams: {
         pageNum: 1,
         pageSize: 10,
-        userId: null,
-        userName: null,
-        nickName: null,
-        data1: null,
-        data2: null,
-        data3: null,
-        data4: null,
-        data5: null,
-        data6: null,
-        status: null,
+        userId: undefined,
+        userName: undefined,
+        nickName: undefined,
+        data1: undefined,
+        data2: undefined,
+        data3: undefined,
+        data4: undefined,
+        data5: undefined,
+        data6: undefined,
+        status: undefined,
       },
       // 表单参数
       form: {},
@@ -286,6 +306,9 @@ export default {
   },
   created() {
     this.getList();
+    this.getDicts("sys_normal_disable").then(response => {
+      this.statusOptions = response.data;
+    });
   },
   methods: {
     /** 查询客户数据列表 */
@@ -295,6 +318,21 @@ export default {
         this.dataList = response.rows;
         this.total = response.total;
         this.loading = false;
+      });
+    },
+    // 用户状态修改
+    handleStatusChange(row) {
+      let text = row.status === "0" ? "启用" : "停用";
+      this.$confirm('确认要"' + text + '""' + row.userName + '"用户吗?', "警告", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      }).then(function() {
+        return changeUserStatus(row.userId, row.status);
+      }).then(() => {
+        this.msgSuccess(text + "成功");
+      }).catch(function() {
+        row.status = row.status === "0" ? "1" : "0";
       });
     },
     // 取消按钮
