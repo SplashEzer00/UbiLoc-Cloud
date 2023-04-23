@@ -4,16 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.UbiLoc</groupId>
-    <artifactId>UbiLoc</artifactId>
+    <groupId>com.MotCap</groupId>
+    <artifactId>MotCap</artifactId>
     <version>2.4.0</version>
 
-    <name>UbiLoc</name>
+    <name>MotCap</name>
     <url>http://www.UbiLoc.vip</url>
-    <description>UbiLoc微服务系统</description>
+    <description>MotCap微服务系统</description>
 
     <properties>
-        <UbiLoc.version>2.4.0</UbiLoc.version>
+        <MotCap.version>2.4.0</MotCap.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -160,70 +160,70 @@
 
             <!-- 核心模块 -->
 	        <dependency>
-                <groupId>com.UbiLoc</groupId>
-                <artifactId>UbiLoc-common-core</artifactId>
-                <version>${UbiLoc.version}</version>
+                <groupId>com.MotCap</groupId>
+                <artifactId>MotCap-common-core</artifactId>
+                <version>${MotCap.version}</version>
             </dependency>
 
             <!-- 接口模块 -->
             <dependency>
-                <groupId>com.UbiLoc</groupId>
-                <artifactId>UbiLoc-common-swagger</artifactId>
-                <version>${UbiLoc.version}</version>
+                <groupId>com.MotCap</groupId>
+                <artifactId>MotCap-common-swagger</artifactId>
+                <version>${MotCap.version}</version>
             </dependency>
 
             <!-- 安全模块 -->
             <dependency>
-                <groupId>com.UbiLoc</groupId>
-                <artifactId>UbiLoc-common-security</artifactId>
-                <version>${UbiLoc.version}</version>
+                <groupId>com.MotCap</groupId>
+                <artifactId>MotCap-common-security</artifactId>
+                <version>${MotCap.version}</version>
             </dependency>
 
             <!-- 权限范围 -->
             <dependency>
-                <groupId>com.UbiLoc</groupId>
-                <artifactId>UbiLoc-common-datascope</artifactId>
-                <version>${UbiLoc.version}</version>
+                <groupId>com.MotCap</groupId>
+                <artifactId>MotCap-common-datascope</artifactId>
+                <version>${MotCap.version}</version>
             </dependency>
 
             <!-- 多数据源 -->
             <dependency>
-                <groupId>com.UbiLoc</groupId>
-                <artifactId>UbiLoc-common-datasource</artifactId>
-                <version>${UbiLoc.version}</version>
+                <groupId>com.MotCap</groupId>
+                <artifactId>MotCap-common-datasource</artifactId>
+                <version>${MotCap.version}</version>
             </dependency>
 
             <!-- 日志记录 -->
             <dependency>
-                <groupId>com.UbiLoc</groupId>
-                <artifactId>UbiLoc-common-log</artifactId>
-                <version>${UbiLoc.version}</version>
+                <groupId>com.MotCap</groupId>
+                <artifactId>MotCap-common-log</artifactId>
+                <version>${MotCap.version}</version>
             </dependency>
 
             <!-- 缓存服务 -->
             <dependency>
-                <groupId>com.UbiLoc</groupId>
-                <artifactId>UbiLoc-common-redis</artifactId>
-                <version>${UbiLoc.version}</version>
+                <groupId>com.MotCap</groupId>
+                <artifactId>MotCap-common-redis</artifactId>
+                <version>${MotCap.version}</version>
             </dependency>
 
             <!-- 系统接口 -->
             <dependency>
-                <groupId>com.UbiLoc</groupId>
-                <artifactId>UbiLoc-api-system</artifactId>
-                <version>${UbiLoc.version}</version>
+                <groupId>com.MotCap</groupId>
+                <artifactId>MotCap-api-system</artifactId>
+                <version>${MotCap.version}</version>
             </dependency>
 
         </dependencies>
     </dependencyManagement>
 
     <modules>
-		<module>UbiLoc-auth</module>
-		<module>UbiLoc-gateway</module>
-		<module>UbiLoc-visual</module>
-		<module>UbiLoc-modules</module>
-		<module>UbiLoc-api</module>
-		<module>UbiLoc-common</module>
+		<module>MotCap-auth</module>
+		<module>MotCap-gateway</module>
+		<module>MotCap-visual</module>
+		<module>MotCap-modules</module>
+		<module>MotCap-api</module>
+		<module>MotCap-common</module>
     </modules>
     <packaging>pom</packaging>
 

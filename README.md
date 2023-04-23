@@ -24,26 +24,26 @@
 ## 系统模块
 
 ~~~
-com.UbiLoc     
-├── UbiLoc-ui              // 前端框架 [80]
-├── UbiLoc-gateway         // 网关模块 [8080]
-├── UbiLoc-auth            // 认证中心 [9200]
-├── UbiLoc-api             // 接口模块
-│       └── UbiLoc-api-system                          // 系统接口
-├── UbiLoc-common          // 通用模块
-│       └── UbiLoc-common-core                         // 核心模块
-│       └── UbiLoc-common-datascope                    // 权限范围
-│       └── UbiLoc-common-log                          // 日志记录
-│       └── UbiLoc-common-redis                        // 缓存服务
-│       └── UbiLoc-common-security                     // 安全模块
-│       └── UbiLoc-common-swagger                      // 系统接口
-├── UbiLoc-modules         // 业务模块
-│       └── UbiLoc-system                              // 系统模块 [9201]
-│       └── UbiLoc-gen                                 // 代码生成 [9202]
-│       └── UbiLoc-job                                 // 定时任务 [9203]
-│       └── UbiLoc-file                                // 文件服务 [9300]
-├── UbiLoc-visual          // 图形化管理模块
-│       └── UbiLoc-visual-monitor                      // 监控中心 [9100]
+com.MotCap     
+├── MotCap-ui              // 前端框架 [80]
+├── MotCap-gateway         // 网关模块 [8080]
+├── MotCap-auth            // 认证中心 [9200]
+├── MotCap-api             // 接口模块
+│       └── MotCap-api-system                          // 系统接口
+├── MotCap-common          // 通用模块
+│       └── MotCap-common-core                         // 核心模块
+│       └── MotCap-common-datascope                    // 权限范围
+│       └── MotCap-common-log                          // 日志记录
+│       └── MotCap-common-redis                        // 缓存服务
+│       └── MotCap-common-security                     // 安全模块
+│       └── MotCap-common-swagger                      // 系统接口
+├── MotCap-modules         // 业务模块
+│       └── MotCap-system                              // 系统模块 [9201]
+│       └── MotCap-gen                                 // 代码生成 [9202]
+│       └── MotCap-job                                 // 定时任务 [9203]
+│       └── MotCap-file                                // 文件服务 [9300]
+├── MotCap-visual          // 图形化管理模块
+│       └── MotCap-visual-monitor                      // 监控中心 [9100]
 ├──pom.xml                // 公共依赖
 ~~~
 
@@ -53,8 +53,8 @@ com.UbiLoc
 
 ## 内置功能
 
-1.  用户管理：用户是系统操作者，该功能主要完成系统用户配置。
-2.  菜单管理：配置系统菜单，操作权限，按钮权限标识等。
+1.  数据管理：数据是软件所展示数据，该功能包括客户信息、客户数据存储，以及球星数据存储等。
+2.  用户管理：用户是系统操作者，该功能主要完成系统用户配置。
 3.  角色管理：角色菜单权限分配、设置角色按机构进行数据范围权限划分。
 4.  字典管理：对系统中经常使用的一些较为固定的数据进行维护。
 5.  参数管理：对系统动态配置常用参数。
@@ -62,12 +62,9 @@ com.UbiLoc
 7.  操作日志：系统正常操作日志记录和查询；系统异常信息日志记录和查询。
 8.  登录日志：系统登录日志记录查询包含登录异常。
 9.  在线用户：当前系统中活跃用户状态监控。
-10. 定时任务：在线（添加、修改、删除)任务调度包含执行结果日志。
-11. 代码生成：前后端代码的生成（java、html、xml、sql）支持CRUD下载 。
-12. 系统接口：根据业务代码自动生成相关的api接口文档。
-13. 服务监控：监视当前系统CPU、内存、磁盘、堆栈等相关信息。
-14. 在线构建器：拖动表单元素生成相应的HTML代码。
-15. 连接池监视：监视当前系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈。
+10. 系统接口：根据业务代码自动生成相关的api接口文档。
+11. 服务监控：监视当前系统CPU、内存、磁盘、堆栈等相关信息。账号：MotCap 密码：123456
+12. 连接池监视：监视当前系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈。
 
 ## 开发参考
 

@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.UbiLoc.system.api.factory.RemoteUserFallbackFactory,\
-  com.UbiLoc.system.api.factory.RemoteLogFallbackFactory

@@ -76,7 +76,7 @@ create table players_data (
   create_time       datetime                                   comment '创建时间',
   update_time       datetime                                   comment '更新时间',
   remark            varchar(500)    default null               comment '备注',
-  primary key (user_id)
+  primary key (player_id)
 ) engine=innodb auto_increment=100 comment = '球星数据表';
 -- ----------------------------
 -- 初始化-球星数据表数据

@@ -1,5 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.UbiLoc.common.redis.configure.RedisConfig,\
-  com.UbiLoc.common.redis.service.RedisService
-
-
