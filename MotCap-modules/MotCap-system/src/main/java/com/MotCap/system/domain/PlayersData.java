@@ -6,10 +6,10 @@ import com.MotCap.common.core.annotation.Excel;
 import com.MotCap.common.core.web.domain.BaseEntity;
 
 /**
- * 球星数据对象 players_data
+ * 球星信息对象 players_data
  *
  * @author MotCap
- * @date 2023-04-23
+ * @date 2023-05-28
  */
 public class PlayersData extends BaseEntity
 {
@@ -30,36 +30,16 @@ public class PlayersData extends BaseEntity
     @Excel(name = "头像地址")
     private String avatar;
 
-    /** 数据1 */
-    @Excel(name = "数据1")
-    private String data1;
-
-    /** 数据2 */
-    @Excel(name = "数据2")
-    private String data2;
-
-    /** 数据3 */
-    @Excel(name = "数据3")
-    private String data3;
-
-    /** 数据4 */
-    @Excel(name = "数据4")
-    private String data4;
-
-    /** 数据5 */
-    @Excel(name = "数据5")
-    private String data5;
-
-    /** 数据6 */
-    @Excel(name = "数据6")
-    private String data6;
-
     /** 状态（0正常 1停用） */
     @Excel(name = "状态", readConverterExp = "0=正常,1=停用")
     private String status;
 
     /** 删除标志（0代表存在 2代表删除） */
     private String delFlag;
+
+    /** 介绍 */
+    @Excel(name = "介绍")
+    private String intro;
 
     public void setPlayerId(Long playerId)
     {
@@ -97,60 +77,6 @@ public class PlayersData extends BaseEntity
     {
         return avatar;
     }
-    public void setData1(String data1)
-    {
-        this.data1 = data1;
-    }
-
-    public String getData1()
-    {
-        return data1;
-    }
-    public void setData2(String data2)
-    {
-        this.data2 = data2;
-    }
-
-    public String getData2()
-    {
-        return data2;
-    }
-    public void setData3(String data3)
-    {
-        this.data3 = data3;
-    }
-
-    public String getData3()
-    {
-        return data3;
-    }
-    public void setData4(String data4)
-    {
-        this.data4 = data4;
-    }
-
-    public String getData4()
-    {
-        return data4;
-    }
-    public void setData5(String data5)
-    {
-        this.data5 = data5;
-    }
-
-    public String getData5()
-    {
-        return data5;
-    }
-    public void setData6(String data6)
-    {
-        this.data6 = data6;
-    }
-
-    public String getData6()
-    {
-        return data6;
-    }
     public void setStatus(String status)
     {
         this.status = status;
@@ -169,6 +95,15 @@ public class PlayersData extends BaseEntity
     {
         return delFlag;
     }
+    public void setIntro(String intro)
+    {
+        this.intro = intro;
+    }
+
+    public String getIntro()
+    {
+        return intro;
+    }
 
     @Override
     public String toString() {
@@ -177,16 +112,11 @@ public class PlayersData extends BaseEntity
             .append("playerName", getPlayerName())
             .append("sex", getSex())
             .append("avatar", getAvatar())
-            .append("data1", getData1())
-            .append("data2", getData2())
-            .append("data3", getData3())
-            .append("data4", getData4())
-            .append("data5", getData5())
-            .append("data6", getData6())
             .append("status", getStatus())
             .append("delFlag", getDelFlag())
             .append("createTime", getCreateTime())
             .append("updateTime", getUpdateTime())
+            .append("intro", getIntro())
             .append("remark", getRemark())
             .toString();
     }

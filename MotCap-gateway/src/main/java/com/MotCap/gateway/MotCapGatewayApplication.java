@@ -17,7 +17,7 @@ public class MotCapGatewayApplication
     public static void main(String[] args)
     {
         SpringApplication.run(MotCapGatewayApplication.class, args);
-        System.out.println ("      (♥◠‿◠)ﾉﾞ              优必罗可网关启动成功               ლ(´ڡ`ლ)ﾞ  \n" +
+        System.out.println ("      (♥◠‿◠)ﾉﾞ              网关启动成功               ლ(´ڡ`ლ)ﾞ  \n" +
                 "        ___           ___                       ___       ___           ___     \n" +
                 "       /\\__\\         /\\  \\          ___        /\\__\\     /\\  \\         /\\  \\    \n" +
                 "      /:/  /        /::\\  \\        /\\  \\      /:/  /    /::\\  \\       /::\\  \\   \n" +

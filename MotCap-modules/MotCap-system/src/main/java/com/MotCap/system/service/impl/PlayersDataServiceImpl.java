@@ -9,10 +9,10 @@ import com.MotCap.system.domain.PlayersData;
 import com.MotCap.system.service.IPlayersDataService;
 
 /**
- * 球星数据Service业务层处理
+ * 球星信息Service业务层处理
  *
  * @author MotCap
- * @date 2023-04-23
+ * @date 2023-05-28
  */
 @Service
 public class PlayersDataServiceImpl implements IPlayersDataService
@@ -21,10 +21,10 @@ public class PlayersDataServiceImpl implements IPlayersDataService
     private PlayersDataMapper playersDataMapper;
 
     /**
-     * 查询球星数据
+     * 查询球星信息
      *
-     * @param playerId 球星数据ID
-     * @return 球星数据
+     * @param playerId 球星信息ID
+     * @return 球星信息
      */
     @Override
     public PlayersData selectPlayersDataById(Long playerId)
@@ -33,10 +33,10 @@ public class PlayersDataServiceImpl implements IPlayersDataService
     }
 
     /**
-     * 查询球星数据列表
+     * 查询球星信息列表
      *
-     * @param playersData 球星数据
-     * @return 球星数据
+     * @param playersData 球星信息
+     * @return 球星信息
      */
     @Override
     public List<PlayersData> selectPlayersDataList(PlayersData playersData)
@@ -45,9 +45,9 @@ public class PlayersDataServiceImpl implements IPlayersDataService
     }
 
     /**
-     * 新增球星数据
+     * 新增球星信息
      *
-     * @param playersData 球星数据
+     * @param playersData 球星信息
      * @return 结果
      */
     @Override
@@ -58,9 +58,9 @@ public class PlayersDataServiceImpl implements IPlayersDataService
     }
 
     /**
-     * 修改球星数据
+     * 修改球星信息
      *
-     * @param playersData 球星数据
+     * @param playersData 球星信息
      * @return 结果
      */
     @Override
@@ -71,9 +71,9 @@ public class PlayersDataServiceImpl implements IPlayersDataService
     }
 
     /**
-     * 批量删除球星数据
+     * 批量删除球星信息
      *
-     * @param playerIds 需要删除的球星数据ID
+     * @param playerIds 需要删除的球星信息ID
      * @return 结果
      */
     @Override
@@ -83,9 +83,9 @@ public class PlayersDataServiceImpl implements IPlayersDataService
     }
 
     /**
-     * 删除球星数据信息
+     * 删除球星信息信息
      *
-     * @param playerId 球星数据ID
+     * @param playerId 球星信息ID
      * @return 结果
      */
     @Override

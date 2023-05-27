@@ -41,13 +41,13 @@
     -->
     <el-row :gutter="20">
       <el-col :sm="24" :lg="12" style="padding-left: 20px">
-        <h2>UbiLoc穿戴式三维动作捕捉与分析系统-GolfBudda</h2>
+        <h2>穿戴式三维动作捕捉与分析系统-MotCap</h2>
         <h2>后台管理系统</h2>
         <p>
           UbiLoc穿戴式三维动作捕捉与分析后台管理系统，它基于若依框架开发，可以用于的Web网站管理后台应用程序。所有前端后台代码封装过后十分精简易上手，出错概率低。
         </p>
         <p>
-          <b>当前版本:</b> <span>v{{ version }}</span>
+          <b>当前版本:v2.0.0</b>
         </p>
         <p>
           <el-tag type="danger">&yen;免费开源</el-tag>
@@ -84,7 +84,6 @@
               <li>SpringBoot</li>
               <li>SpringCloud</li>
               <li>Nacos</li>
-              <li>Sentinel</li>
               <li>MyBatis</li>
               <li>Fastjson</li>
               <li>...</li>
@@ -154,7 +153,14 @@
           <el-collapse accordion>
             <el-collapse-item title="v1.0.0 - 2023-03-20">
               <ol>
-                <li>UbiLoc微服务系统正式发布</li>
+                <li>MotCap微服务后台管理系统正式上线</li>
+                <li>基本后台功能实现</li>
+              </ol>
+            </el-collapse-item>
+            <el-collapse-item title="v2.0.0 - 2023-04-23">
+              <ol>
+                <li>后台管理系统版本2</li>
+                <li>添加客户信息管理系统</li>
               </ol>
             </el-collapse-item>
           </el-collapse>

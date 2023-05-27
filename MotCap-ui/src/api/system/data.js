@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询客户数据列表
+// 查询三维数据列表
 export function listData(query) {
   return request({
     url: '/system/data/list',
@@ -9,7 +9,7 @@ export function listData(query) {
   })
 }
 
-// 查询客户数据详细
+// 查询三维数据详细
 export function getData(dataId) {
   return request({
     url: '/system/data/' + dataId,
@@ -17,7 +17,7 @@ export function getData(dataId) {
   })
 }
 
-// 新增客户数据
+// 新增三维数据
 export function addData(data) {
   return request({
     url: '/system/data',
@@ -26,7 +26,7 @@ export function addData(data) {
   })
 }
 
-// 修改客户数据
+// 修改三维数据
 export function updateData(data) {
   return request({
     url: '/system/data',
@@ -35,7 +35,7 @@ export function updateData(data) {
   })
 }
 
-// 删除客户数据
+// 删除三维数据
 export function delData(dataId) {
   return request({
     url: '/system/data/' + dataId,

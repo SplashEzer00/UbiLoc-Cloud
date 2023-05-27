@@ -1,7 +1,7 @@
 {
   "name": "ublc",
   "version": "1.1.0",
-  "description": "UbiLoc穿戴式三维动作捕捉与分析系统后台管理系统",
+  "description": "穿戴式三维动作捕捉与分析系统后台管理系统",
   "author": "spez",
   "license": "MIT",
   "scripts": {

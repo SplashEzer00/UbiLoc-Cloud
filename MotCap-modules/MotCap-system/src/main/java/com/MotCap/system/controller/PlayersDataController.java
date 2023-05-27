@@ -23,22 +23,22 @@ import com.MotCap.common.core.utils.poi.ExcelUtil;
 import com.MotCap.common.core.web.page.TableDataInfo;
 
 /**
- * 球星数据Controller
+ * 球星信息Controller
  *
  * @author MotCap
- * @date 2023-04-23
+ * @date 2023-05-28
  */
 @RestController
-@RequestMapping("/datas")
+@RequestMapping("/player")
 public class PlayersDataController extends BaseController
 {
     @Autowired
     private IPlayersDataService playersDataService;
 
     /**
-     * 查询球星数据列表
+     * 查询球星信息列表
      */
-    @PreAuthorize(hasPermi = "system:datas:list")
+    @PreAuthorize(hasPermi = "system:player:list")
     @GetMapping("/list")
     public TableDataInfo list(PlayersData playersData)
     {
@@ -48,22 +48,22 @@ public class PlayersDataController extends BaseController
     }
 
     /**
-     * 导出球星数据列表
+     * 导出球星信息列表
      */
-    @PreAuthorize(hasPermi = "system:datas:export")
-    @Log(title = "球星数据", businessType = BusinessType.EXPORT)
+    @PreAuthorize(hasPermi = "system:player:export")
+    @Log(title = "球星信息", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     public void export(HttpServletResponse response, PlayersData playersData) throws IOException
     {
         List<PlayersData> list = playersDataService.selectPlayersDataList(playersData);
         ExcelUtil<PlayersData> util = new ExcelUtil<PlayersData>(PlayersData.class);
-        util.exportExcel(response, list, "datas");
+        util.exportExcel(response, list, "player");
     }
 
     /**
-     * 获取球星数据详细信息
+     * 获取球星信息详细信息
      */
-    @PreAuthorize(hasPermi = "system:datas:query")
+    @PreAuthorize(hasPermi = "system:player:query")
     @GetMapping(value = "/{playerId}")
     public AjaxResult getInfo(@PathVariable("playerId") Long playerId)
     {
@@ -71,10 +71,10 @@ public class PlayersDataController extends BaseController
     }
 
     /**
-     * 新增球星数据
+     * 新增球星信息
      */
-    @PreAuthorize(hasPermi = "system:datas:add")
-    @Log(title = "球星数据", businessType = BusinessType.INSERT)
+    @PreAuthorize(hasPermi = "system:player:add")
+    @Log(title = "球星信息", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody PlayersData playersData)
     {
@@ -82,10 +82,10 @@ public class PlayersDataController extends BaseController
     }
 
     /**
-     * 修改球星数据
+     * 修改球星信息
      */
-    @PreAuthorize(hasPermi = "system:datas:edit")
-    @Log(title = "球星数据", businessType = BusinessType.UPDATE)
+    @PreAuthorize(hasPermi = "system:player:edit")
+    @Log(title = "球星信息", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody PlayersData playersData)
     {
@@ -93,10 +93,10 @@ public class PlayersDataController extends BaseController
     }
 
     /**
-     * 删除球星数据
+     * 删除球星信息
      */
-    @PreAuthorize(hasPermi = "system:datas:remove")
-    @Log(title = "球星数据", businessType = BusinessType.DELETE)
+    @PreAuthorize(hasPermi = "system:player:remove")
+    @Log(title = "球星信息", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{playerIds}")
     public AjaxResult remove(@PathVariable Long[] playerIds)
     {

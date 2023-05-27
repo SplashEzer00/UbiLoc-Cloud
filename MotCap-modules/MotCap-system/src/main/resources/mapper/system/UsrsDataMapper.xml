@@ -8,13 +8,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="dataId"    column="data_id"    />
         <result property="userId"    column="user_id"    />
         <result property="userName"    column="user_name"    />
-        <result property="nickName"    column="nick_name"    />
-        <result property="data1"    column="data1"    />
-        <result property="data2"    column="data2"    />
-        <result property="data3"    column="data3"    />
-        <result property="data4"    column="data4"    />
-        <result property="data5"    column="data5"    />
-        <result property="data6"    column="data6"    />
+        <result property="aXmean"    column="A_Xmean"    />
+        <result property="aYmean"    column="A_Ymean"    />
+        <result property="aZmean"    column="A_Zmean"    />
+        <result property="aXstd"    column="A_Xstd"    />
+        <result property="aYstd"    column="A_Ystd"    />
+        <result property="aZstd"    column="A_Zstd"    />
+        <result property="gXmean"    column="G_Xmean"    />
+        <result property="gYmean"    column="G_Ymean"    />
+        <result property="gZmean"    column="G_Zmean"    />
+        <result property="gXstd"    column="G_Xstd"    />
+        <result property="gYstd"    column="G_Ystd"    />
+        <result property="gZstd"    column="G_Zstd"    />
+        <result property="part"    column="part"    />
+        <result property="state"    column="state"    />
         <result property="status"    column="status"    />
         <result property="createTime"    column="create_time"    />
         <result property="updateTime"    column="update_time"    />
@@ -22,7 +29,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 
     <sql id="selectUsrsDataVo">
-        select data_id, user_id, user_name, nick_name, data1, data2, data3, data4, data5, data6, status, create_time, update_time, remark from usrs_data
+        select data_id, user_id, user_name, A_Xmean, A_Ymean, A_Zmean, A_Xstd, A_Ystd, A_Zstd, G_Xmean, G_Ymean, G_Zmean, G_Xstd, G_Ystd, G_Zstd, part, state, status, create_time, update_time, remark from usrs_data
     </sql>
 
     <select id="selectUsrsDataList" parameterType="UsrsData" resultMap="UsrsDataResult">
@@ -30,13 +37,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <where>  
             <if test="userId != null "> and user_id = #{userId}</if>
             <if test="userName != null  and userName != ''"> and user_name like concat('%', #{userName}, '%')</if>
-            <if test="nickName != null  and nickName != ''"> and nick_name like concat('%', #{nickName}, '%')</if>
-            <if test="data1 != null  and data1 != ''"> and data1 = #{data1}</if>
-            <if test="data2 != null  and data2 != ''"> and data2 = #{data2}</if>
-            <if test="data3 != null  and data3 != ''"> and data3 = #{data3}</if>
-            <if test="data4 != null  and data4 != ''"> and data4 = #{data4}</if>
-            <if test="data5 != null  and data5 != ''"> and data5 = #{data5}</if>
-            <if test="data6 != null  and data6 != ''"> and data6 = #{data6}</if>
+            <if test="aXmean != null  and aXmean != ''"> and A_Xmean = #{aXmean}</if>
+            <if test="aYmean != null  and aYmean != ''"> and A_Ymean = #{aYmean}</if>
+            <if test="aZmean != null  and aZmean != ''"> and A_Zmean = #{aZmean}</if>
+            <if test="aXstd != null  and aXstd != ''"> and A_Xstd = #{aXstd}</if>
+            <if test="aYstd != null  and aYstd != ''"> and A_Ystd = #{aYstd}</if>
+            <if test="aZstd != null  and aZstd != ''"> and A_Zstd = #{aZstd}</if>
+            <if test="gXmean != null  and gXmean != ''"> and G_Xmean = #{gXmean}</if>
+            <if test="gYmean != null  and gYmean != ''"> and G_Ymean = #{gYmean}</if>
+            <if test="gZmean != null  and gZmean != ''"> and G_Zmean = #{gZmean}</if>
+            <if test="gXstd != null  and gXstd != ''"> and G_Xstd = #{gXstd}</if>
+            <if test="gYstd != null  and gYstd != ''"> and G_Ystd = #{gYstd}</if>
+            <if test="gZstd != null  and gZstd != ''"> and G_Zstd = #{gZstd}</if>
+            <if test="part != null  and part != ''"> and part = #{part}</if>
+            <if test="state != null  and state != ''"> and state = #{state}</if>
             <if test="status != null  and status != ''"> and status = #{status}</if>
         </where>
     </select>
@@ -51,13 +65,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="userId != null">user_id,</if>
             <if test="userName != null and userName != ''">user_name,</if>
-            <if test="nickName != null and nickName != ''">nick_name,</if>
-            <if test="data1 != null">data1,</if>
-            <if test="data2 != null">data2,</if>
-            <if test="data3 != null">data3,</if>
-            <if test="data4 != null">data4,</if>
-            <if test="data5 != null">data5,</if>
-            <if test="data6 != null">data6,</if>
+            <if test="aXmean != null">A_Xmean,</if>
+            <if test="aYmean != null">A_Ymean,</if>
+            <if test="aZmean != null">A_Zmean,</if>
+            <if test="aXstd != null">A_Xstd,</if>
+            <if test="aYstd != null">A_Ystd,</if>
+            <if test="aZstd != null">A_Zstd,</if>
+            <if test="gXmean != null">G_Xmean,</if>
+            <if test="gYmean != null">G_Ymean,</if>
+            <if test="gZmean != null">G_Zmean,</if>
+            <if test="gXstd != null">G_Xstd,</if>
+            <if test="gYstd != null">G_Ystd,</if>
+            <if test="gZstd != null">G_Zstd,</if>
+            <if test="part != null">part,</if>
+            <if test="state != null">state,</if>
             <if test="status != null">status,</if>
             <if test="createTime != null">create_time,</if>
             <if test="updateTime != null">update_time,</if>
@@ -66,13 +87,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="userId != null">#{userId},</if>
             <if test="userName != null and userName != ''">#{userName},</if>
-            <if test="nickName != null and nickName != ''">#{nickName},</if>
-            <if test="data1 != null">#{data1},</if>
-            <if test="data2 != null">#{data2},</if>
-            <if test="data3 != null">#{data3},</if>
-            <if test="data4 != null">#{data4},</if>
-            <if test="data5 != null">#{data5},</if>
-            <if test="data6 != null">#{data6},</if>
+            <if test="aXmean != null">#{aXmean},</if>
+            <if test="aYmean != null">#{aYmean},</if>
+            <if test="aZmean != null">#{aZmean},</if>
+            <if test="aXstd != null">#{aXstd},</if>
+            <if test="aYstd != null">#{aYstd},</if>
+            <if test="aZstd != null">#{aZstd},</if>
+            <if test="gXmean != null">#{gXmean},</if>
+            <if test="gYmean != null">#{gYmean},</if>
+            <if test="gZmean != null">#{gZmean},</if>
+            <if test="gXstd != null">#{gXstd},</if>
+            <if test="gYstd != null">#{gYstd},</if>
+            <if test="gZstd != null">#{gZstd},</if>
+            <if test="part != null">#{part},</if>
+            <if test="state != null">#{state},</if>
             <if test="status != null">#{status},</if>
             <if test="createTime != null">#{createTime},</if>
             <if test="updateTime != null">#{updateTime},</if>
@@ -85,13 +113,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <trim prefix="SET" suffixOverrides=",">
             <if test="userId != null">user_id = #{userId},</if>
             <if test="userName != null and userName != ''">user_name = #{userName},</if>
-            <if test="nickName != null and nickName != ''">nick_name = #{nickName},</if>
-            <if test="data1 != null">data1 = #{data1},</if>
-            <if test="data2 != null">data2 = #{data2},</if>
-            <if test="data3 != null">data3 = #{data3},</if>
-            <if test="data4 != null">data4 = #{data4},</if>
-            <if test="data5 != null">data5 = #{data5},</if>
-            <if test="data6 != null">data6 = #{data6},</if>
+            <if test="aXmean != null">A_Xmean = #{aXmean},</if>
+            <if test="aYmean != null">A_Ymean = #{aYmean},</if>
+            <if test="aZmean != null">A_Zmean = #{aZmean},</if>
+            <if test="aXstd != null">A_Xstd = #{aXstd},</if>
+            <if test="aYstd != null">A_Ystd = #{aYstd},</if>
+            <if test="aZstd != null">A_Zstd = #{aZstd},</if>
+            <if test="gXmean != null">G_Xmean = #{gXmean},</if>
+            <if test="gYmean != null">G_Ymean = #{gYmean},</if>
+            <if test="gZmean != null">G_Zmean = #{gZmean},</if>
+            <if test="gXstd != null">G_Xstd = #{gXstd},</if>
+            <if test="gYstd != null">G_Ystd = #{gYstd},</if>
+            <if test="gZstd != null">G_Zstd = #{gZstd},</if>
+            <if test="part != null">part = #{part},</if>
+            <if test="state != null">state = #{state},</if>
             <if test="status != null">status = #{status},</if>
             <if test="createTime != null">create_time = #{createTime},</if>
             <if test="updateTime != null">update_time = #{updateTime},</if>

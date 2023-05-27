@@ -9,10 +9,10 @@ import com.MotCap.system.domain.UsrsData;
 import com.MotCap.system.service.IUsrsDataService;
 
 /**
- * 客户数据Service业务层处理
+ * 三维数据Service业务层处理
  *
  * @author MotCap
- * @date 2023-04-23
+ * @date 2023-05-28
  */
 @Service
 public class UsrsDataServiceImpl implements IUsrsDataService
@@ -21,10 +21,10 @@ public class UsrsDataServiceImpl implements IUsrsDataService
     private UsrsDataMapper usrsDataMapper;
 
     /**
-     * 查询客户数据
+     * 查询三维数据
      *
-     * @param dataId 客户数据ID
-     * @return 客户数据
+     * @param dataId 三维数据ID
+     * @return 三维数据
      */
     @Override
     public UsrsData selectUsrsDataById(Long dataId)
@@ -33,10 +33,10 @@ public class UsrsDataServiceImpl implements IUsrsDataService
     }
 
     /**
-     * 查询客户数据列表
+     * 查询三维数据列表
      *
-     * @param usrsData 客户数据
-     * @return 客户数据
+     * @param usrsData 三维数据
+     * @return 三维数据
      */
     @Override
     public List<UsrsData> selectUsrsDataList(UsrsData usrsData)
@@ -45,9 +45,9 @@ public class UsrsDataServiceImpl implements IUsrsDataService
     }
 
     /**
-     * 新增客户数据
+     * 新增三维数据
      *
-     * @param usrsData 客户数据
+     * @param usrsData 三维数据
      * @return 结果
      */
     @Override
@@ -58,9 +58,9 @@ public class UsrsDataServiceImpl implements IUsrsDataService
     }
 
     /**
-     * 修改客户数据
+     * 修改三维数据
      *
-     * @param usrsData 客户数据
+     * @param usrsData 三维数据
      * @return 结果
      */
     @Override
@@ -71,9 +71,9 @@ public class UsrsDataServiceImpl implements IUsrsDataService
     }
 
     /**
-     * 批量删除客户数据
+     * 批量删除三维数据
      *
-     * @param dataIds 需要删除的客户数据ID
+     * @param dataIds 需要删除的三维数据ID
      * @return 结果
      */
     @Override
@@ -83,9 +83,9 @@ public class UsrsDataServiceImpl implements IUsrsDataService
     }
 
     /**
-     * 删除客户数据信息
+     * 删除三维数据信息
      *
-     * @param dataId 客户数据ID
+     * @param dataId 三维数据ID
      * @return 结果
      */
     @Override

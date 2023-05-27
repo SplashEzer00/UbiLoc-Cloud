@@ -23,10 +23,10 @@ import com.MotCap.common.core.utils.poi.ExcelUtil;
 import com.MotCap.common.core.web.page.TableDataInfo;
 
 /**
- * 客户数据Controller
+ * 三维数据Controller
  *
  * @author MotCap
- * @date 2023-04-23
+ * @date 2023-05-28
  */
 @RestController
 @RequestMapping("/data")
@@ -36,7 +36,7 @@ public class UsrsDataController extends BaseController
     private IUsrsDataService usrsDataService;
 
     /**
-     * 查询客户数据列表
+     * 查询三维数据列表
      */
     @PreAuthorize(hasPermi = "system:data:list")
     @GetMapping("/list")
@@ -48,10 +48,10 @@ public class UsrsDataController extends BaseController
     }
 
     /**
-     * 导出客户数据列表
+     * 导出三维数据列表
      */
     @PreAuthorize(hasPermi = "system:data:export")
-    @Log(title = "客户数据", businessType = BusinessType.EXPORT)
+    @Log(title = "三维数据", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     public void export(HttpServletResponse response, UsrsData usrsData) throws IOException
     {
@@ -61,7 +61,7 @@ public class UsrsDataController extends BaseController
     }
 
     /**
-     * 获取客户数据详细信息
+     * 获取三维数据详细信息
      */
     @PreAuthorize(hasPermi = "system:data:query")
     @GetMapping(value = "/{dataId}")
@@ -71,10 +71,10 @@ public class UsrsDataController extends BaseController
     }
 
     /**
-     * 新增客户数据
+     * 新增三维数据
      */
     @PreAuthorize(hasPermi = "system:data:add")
-    @Log(title = "客户数据", businessType = BusinessType.INSERT)
+    @Log(title = "三维数据", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody UsrsData usrsData)
     {
@@ -82,10 +82,10 @@ public class UsrsDataController extends BaseController
     }
 
     /**
-     * 修改客户数据
+     * 修改三维数据
      */
     @PreAuthorize(hasPermi = "system:data:edit")
-    @Log(title = "客户数据", businessType = BusinessType.UPDATE)
+    @Log(title = "三维数据", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody UsrsData usrsData)
     {
@@ -93,10 +93,10 @@ public class UsrsDataController extends BaseController
     }
 
     /**
-     * 删除客户数据
+     * 删除三维数据
      */
     @PreAuthorize(hasPermi = "system:data:remove")
-    @Log(title = "客户数据", businessType = BusinessType.DELETE)
+    @Log(title = "三维数据", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{dataIds}")
     public AjaxResult remove(@PathVariable Long[] dataIds)
     {

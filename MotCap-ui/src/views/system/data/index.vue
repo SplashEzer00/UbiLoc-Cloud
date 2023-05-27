@@ -10,81 +10,142 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="用户账号" prop="userName">
+      <el-form-item label="用户名" prop="userName">
         <el-input
           v-model="queryParams.userName"
-          placeholder="请输入用户账号"
+          placeholder="请输入用户名"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="用户昵称" prop="nickName">
+      <el-form-item label="A_Xmean" prop="aXmean">
         <el-input
-          v-model="queryParams.nickName"
-          placeholder="请输入用户昵称"
+          v-model="queryParams.aXmean"
+          placeholder="请输入A_Xmean"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <!--
-      <el-form-item label="数据1" prop="data1">
+      <el-form-item label="A_Ymean" prop="aYmean">
         <el-input
-          v-model="queryParams.data1"
-          placeholder="请输入数据1"
+          v-model="queryParams.aYmean"
+          placeholder="请输入A_Ymean"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="数据2" prop="data2">
+      <el-form-item label="A_Zmean" prop="aZmean">
         <el-input
-          v-model="queryParams.data2"
-          placeholder="请输入数据2"
+          v-model="queryParams.aZmean"
+          placeholder="请输入A_Zmean"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="数据3" prop="data3">
+      <el-form-item label="A_Xstd" prop="aXstd">
         <el-input
-          v-model="queryParams.data3"
-          placeholder="请输入数据3"
+          v-model="queryParams.aXstd"
+          placeholder="请输入A_Xstd"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="数据4" prop="data4">
+      <el-form-item label="A_Ystd" prop="aYstd">
         <el-input
-          v-model="queryParams.data4"
-          placeholder="请输入数据4"
+          v-model="queryParams.aYstd"
+          placeholder="请输入A_Ystd"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="数据5" prop="data5">
+      <el-form-item label="A_Zstd" prop="aZstd">
         <el-input
-          v-model="queryParams.data5"
-          placeholder="请输入数据5"
+          v-model="queryParams.aZstd"
+          placeholder="请输入A_Zstd"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="数据6" prop="data6">
+      <el-form-item label="G_Xmean" prop="gXmean">
         <el-input
-          v-model="queryParams.data6"
-          placeholder="请输入数据6"
+          v-model="queryParams.gXmean"
+          placeholder="请输入G_Xmean"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      -->
-      <el-form-item label="状态" prop="status">
+      <el-form-item label="G_Ymean" prop="gYmean">
+        <el-input
+          v-model="queryParams.gYmean"
+          placeholder="请输入G_Ymean"
+          clearable
+          size="small"
+          @keyup.enter.native="handleQuery"
+        />
+      </el-form-item>
+      <el-form-item label="G_Zmean" prop="gZmean">
+        <el-input
+          v-model="queryParams.gZmean"
+          placeholder="请输入G_Zmean"
+          clearable
+          size="small"
+          @keyup.enter.native="handleQuery"
+        />
+      </el-form-item>
+      <el-form-item label="G_Xstd" prop="gXstd">
+        <el-input
+          v-model="queryParams.gXstd"
+          placeholder="请输入G_Xstd"
+          clearable
+          size="small"
+          @keyup.enter.native="handleQuery"
+        />
+      </el-form-item>
+      <el-form-item label="G_Ystd" prop="gYstd">
+        <el-input
+          v-model="queryParams.gYstd"
+          placeholder="请输入G_Ystd"
+          clearable
+          size="small"
+          @keyup.enter.native="handleQuery"
+        />
+      </el-form-item>
+      <el-form-item label="G_Zstd" prop="gZstd">
+        <el-input
+          v-model="queryParams.gZstd"
+          placeholder="请输入G_Zstd"
+          clearable
+          size="small"
+          @keyup.enter.native="handleQuery"
+        />
+      </el-form-item>
+      <el-form-item label="部位" prop="part">
+        <el-input
+          v-model="queryParams.part"
+          placeholder="请输入部位"
+          clearable
+          size="small"
+          @keyup.enter.native="handleQuery"
+        />
+      </el-form-item>
+      <el-form-item label="模式" prop="state">
+        <el-input
+          v-model="queryParams.state"
+          placeholder="请输入模式"
+          clearable
+          size="small"
+          @keyup.enter.native="handleQuery"
+        />
+      </el-form-item>
+      <el-form-item label="数据状态" prop="status">
         <el-select v-model="queryParams.status" placeholder="数据状态" clearable size="small">
           <el-option
             v-for="dict in statusOptions"
@@ -146,14 +207,21 @@
       <el-table-column type="selection" width="55" align="center" />
       <el-table-column label="数据ID" align="center" prop="dataId" />
       <el-table-column label="用户ID" align="center" prop="userId" />
-      <el-table-column label="用户账号" align="center" prop="userName" />
-      <el-table-column label="用户昵称" align="center" prop="nickName" />
-      <el-table-column label="数据1" align="center" prop="data1" />
-      <el-table-column label="数据2" align="center" prop="data2" />
-      <el-table-column label="数据3" align="center" prop="data3" />
-      <el-table-column label="数据4" align="center" prop="data4" />
-      <el-table-column label="数据5" align="center" prop="data5" />
-      <el-table-column label="数据6" align="center" prop="data6" />
+      <el-table-column label="用户名" align="center" prop="userName" />
+      <el-table-column label="A_Xmean" align="center" prop="aXmean" />
+      <el-table-column label="A_Ymean" align="center" prop="aYmean" />
+      <el-table-column label="A_Zmean" align="center" prop="aZmean" />
+      <el-table-column label="A_Xstd" align="center" prop="aXstd" />
+      <el-table-column label="A_Ystd" align="center" prop="aYstd" />
+      <el-table-column label="A_Zstd" align="center" prop="aZstd" />
+      <el-table-column label="G_Xmean" align="center" prop="gXmean" />
+      <el-table-column label="G_Ymean" align="center" prop="gYmean" />
+      <el-table-column label="G_Zmean" align="center" prop="gZmean" />
+      <el-table-column label="G_Xstd" align="center" prop="gXstd" />
+      <el-table-column label="G_Ystd" align="center" prop="gYstd" />
+      <el-table-column label="G_Zstd" align="center" prop="gZstd" />
+      <el-table-column label="部位" align="center" prop="part" />
+      <el-table-column label="模式" align="center" prop="state" />
       <el-table-column label="数据状态" align="center" prop="status">
         <template slot-scope="scope">
           <el-switch
@@ -193,37 +261,58 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改客户数据对话框 -->
+    <!-- 添加或修改三维数据对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-form-item label="用户ID" prop="userId">
           <el-input v-model="form.userId" placeholder="请输入用户ID" />
         </el-form-item>
-        <el-form-item label="用户账号" prop="userName">
-          <el-input v-model="form.userName" placeholder="请输入用户账号" />
+        <el-form-item label="用户名" prop="userName">
+          <el-input v-model="form.userName" placeholder="请输入用户名" />
         </el-form-item>
-        <el-form-item label="用户昵称" prop="nickName">
-          <el-input v-model="form.nickName" placeholder="请输入用户昵称" />
+        <el-form-item label="A_Xmean" prop="aXmean">
+          <el-input v-model="form.aXmean" placeholder="请输入A_Xmean" />
         </el-form-item>
-        <el-form-item label="数据1" prop="data1">
-          <el-input v-model="form.data1" placeholder="请输入数据1" />
+        <el-form-item label="A_Ymean" prop="aYmean">
+          <el-input v-model="form.aYmean" placeholder="请输入A_Ymean" />
         </el-form-item>
-        <el-form-item label="数据2" prop="data2">
-          <el-input v-model="form.data2" placeholder="请输入数据2" />
+        <el-form-item label="A_Zmean" prop="aZmean">
+          <el-input v-model="form.aZmean" placeholder="请输入A_Zmean" />
         </el-form-item>
-        <el-form-item label="数据3" prop="data3">
-          <el-input v-model="form.data3" placeholder="请输入数据3" />
+        <el-form-item label="A_Xstd" prop="aXstd">
+          <el-input v-model="form.aXstd" placeholder="请输入A_Xstd" />
         </el-form-item>
-        <el-form-item label="数据4" prop="data4">
-          <el-input v-model="form.data4" placeholder="请输入数据4" />
+        <el-form-item label="A_Ystd" prop="aYstd">
+          <el-input v-model="form.aYstd" placeholder="请输入A_Ystd" />
         </el-form-item>
-        <el-form-item label="数据5" prop="data5">
-          <el-input v-model="form.data5" placeholder="请输入数据5" />
+        <el-form-item label="A_Zstd" prop="aZstd">
+          <el-input v-model="form.aZstd" placeholder="请输入A_Zstd" />
         </el-form-item>
-        <el-form-item label="数据6" prop="data6">
-          <el-input v-model="form.data6" placeholder="请输入数据6" />
+        <el-form-item label="G_Xmean" prop="gXmean">
+          <el-input v-model="form.gXmean" placeholder="请输入G_Xmean" />
         </el-form-item>
-        <el-form-item label="数据状态">
+        <el-form-item label="G_Ymean" prop="gYmean">
+          <el-input v-model="form.gYmean" placeholder="请输入G_Ymean" />
+        </el-form-item>
+        <el-form-item label="G_Zmean" prop="gZmean">
+          <el-input v-model="form.gZmean" placeholder="请输入G_Zmean" />
+        </el-form-item>
+        <el-form-item label="G_Xstd" prop="gXstd">
+          <el-input v-model="form.gXstd" placeholder="请输入G_Xstd" />
+        </el-form-item>
+        <el-form-item label="G_Ystd" prop="gYstd">
+          <el-input v-model="form.gYstd" placeholder="请输入G_Ystd" />
+        </el-form-item>
+        <el-form-item label="G_Zstd" prop="gZstd">
+          <el-input v-model="form.gZstd" placeholder="请输入G_Zstd" />
+        </el-form-item>
+        <el-form-item label="部位" prop="part">
+          <el-input v-model="form.part" placeholder="请输入部位" />
+        </el-form-item>
+        <el-form-item label="模式" prop="state">
+          <el-input v-model="form.state" placeholder="请输入模式" />
+        </el-form-item>
+        <el-form-item label="状态">
           <el-radio-group v-model="form.status">
             <el-radio
               v-for="dict in statusOptions"
@@ -245,7 +334,7 @@
 </template>
 
 <script>
-import { listData, getData, delData, addData, updateData, changeUserStatus } from "@/api/system/data";
+import { listData, getData, delData, addData, updateData } from "@/api/system/data";
 
 export default {
   name: "Data",
@@ -265,10 +354,10 @@ export default {
       showSearch: true,
       // 总条数
       total: 0,
+      // 三维数据表格数据
+      dataList: [],
       // 状态数据字典
       statusOptions: [],
-      // 客户数据表格数据
-      dataList: [],
       // 弹出层标题
       title: "",
       // 是否显示弹出层
@@ -277,16 +366,23 @@ export default {
       queryParams: {
         pageNum: 1,
         pageSize: 10,
-        userId: undefined,
-        userName: undefined,
-        nickName: undefined,
-        data1: undefined,
-        data2: undefined,
-        data3: undefined,
-        data4: undefined,
-        data5: undefined,
-        data6: undefined,
-        status: undefined,
+        userId: null,
+        userName: null,
+        aXmean: null,
+        aYmean: null,
+        aZmean: null,
+        aXstd: null,
+        aYstd: null,
+        aZstd: null,
+        gXmean: null,
+        gYmean: null,
+        gZmean: null,
+        gXstd: null,
+        gYstd: null,
+        gZstd: null,
+        part: null,
+        state: null,
+        status: null,
       },
       // 表单参数
       form: {},
@@ -296,10 +392,7 @@ export default {
           { required: true, message: "用户ID不能为空", trigger: "blur" }
         ],
         userName: [
-          { required: true, message: "用户账号不能为空", trigger: "blur" }
-        ],
-        nickName: [
-          { required: true, message: "用户昵称不能为空", trigger: "blur" }
+          { required: true, message: "用户名不能为空", trigger: "blur" }
         ],
       }
     };
@@ -311,28 +404,13 @@ export default {
     });
   },
   methods: {
-    /** 查询客户数据列表 */
+    /** 查询三维数据列表 */
     getList() {
       this.loading = true;
       listData(this.queryParams).then(response => {
         this.dataList = response.rows;
         this.total = response.total;
         this.loading = false;
-      });
-    },
-    // 用户状态修改
-    handleStatusChange(row) {
-      let text = row.status === "0" ? "启用" : "停用";
-      this.$confirm('确认要"' + text + '""' + row.userName + '"用户吗?', "警告", {
-        confirmButtonText: "确定",
-        cancelButtonText: "取消",
-        type: "warning"
-      }).then(function() {
-        return changeUserStatus(row.userId, row.status);
-      }).then(() => {
-        this.msgSuccess(text + "成功");
-      }).catch(function() {
-        row.status = row.status === "0" ? "1" : "0";
       });
     },
     // 取消按钮
@@ -346,13 +424,20 @@ export default {
         dataId: null,
         userId: null,
         userName: null,
-        nickName: null,
-        data1: null,
-        data2: null,
-        data3: null,
-        data4: null,
-        data5: null,
-        data6: null,
+        aXmean: null,
+        aYmean: null,
+        aZmean: null,
+        aXstd: null,
+        aYstd: null,
+        aZstd: null,
+        gXmean: null,
+        gYmean: null,
+        gZmean: null,
+        gXstd: null,
+        gYstd: null,
+        gZstd: null,
+        part: null,
+        state: null,
         status: "0",
         createTime: null,
         updateTime: null,
@@ -380,7 +465,7 @@ export default {
     handleAdd() {
       this.reset();
       this.open = true;
-      this.title = "添加客户数据";
+      this.title = "添加三维数据";
     },
     /** 修改按钮操作 */
     handleUpdate(row) {
@@ -389,7 +474,7 @@ export default {
       getData(dataId).then(response => {
         this.form = response.data;
         this.open = true;
-        this.title = "修改客户数据";
+        this.title = "修改三维数据";
       });
     },
     /** 提交按钮 */
@@ -415,7 +500,7 @@ export default {
     /** 删除按钮操作 */
     handleDelete(row) {
       const dataIds = row.dataId || this.ids;
-      this.$confirm('是否确认删除客户数据编号为"' + dataIds + '"的数据项?', "警告", {
+      this.$confirm('是否确认删除三维数据编号为"' + dataIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -431,6 +516,22 @@ export default {
       this.download('system/data/export', {
         ...this.queryParams
       }, `system_data.xlsx`)
+    },
+
+    // 用户状态修改
+    handleStatusChange(row) {
+      let text = row.status === "0" ? "启用" : "停用";
+      this.$confirm('确认要"' + text + '""' + row.userName + '"用户的数据吗?', "警告", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      }).then(function() {
+        return changeUserStatus(row.userId, row.status);
+      }).then(() => {
+        this.msgSuccess(text + "成功");
+      }).catch(function() {
+        row.status = row.status === "0" ? "1" : "0";
+      });
     }
   }
 };

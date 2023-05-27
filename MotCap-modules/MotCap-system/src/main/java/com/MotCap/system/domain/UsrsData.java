@@ -6,10 +6,10 @@ import com.MotCap.common.core.annotation.Excel;
 import com.MotCap.common.core.web.domain.BaseEntity;
 
 /**
- * 客户数据对象 usrs_data
+ * 三维数据对象 usrs_data
  *
  * @author MotCap
- * @date 2023-04-23
+ * @date 2023-05-28
  */
 public class UsrsData extends BaseEntity
 {
@@ -22,37 +22,65 @@ public class UsrsData extends BaseEntity
     @Excel(name = "用户ID")
     private Long userId;
 
-    /** 用户账号 */
-    @Excel(name = "用户账号")
+    /** 用户名 */
+    @Excel(name = "用户名")
     private String userName;
 
-    /** 用户昵称 */
-    @Excel(name = "用户昵称")
-    private String nickName;
+    /** A_Xmean */
+    @Excel(name = "A_Xmean")
+    private String aXmean;
 
-    /** 数据1 */
-    @Excel(name = "数据1")
-    private String data1;
+    /** A_Ymean */
+    @Excel(name = "A_Ymean")
+    private String aYmean;
 
-    /** 数据2 */
-    @Excel(name = "数据2")
-    private String data2;
+    /** A_Zmean */
+    @Excel(name = "A_Zmean")
+    private String aZmean;
 
-    /** 数据3 */
-    @Excel(name = "数据3")
-    private String data3;
+    /** A_Xstd */
+    @Excel(name = "A_Xstd")
+    private String aXstd;
 
-    /** 数据4 */
-    @Excel(name = "数据4")
-    private String data4;
+    /** A_Ystd */
+    @Excel(name = "A_Ystd")
+    private String aYstd;
 
-    /** 数据5 */
-    @Excel(name = "数据5")
-    private String data5;
+    /** A_Zstd */
+    @Excel(name = "A_Zstd")
+    private String aZstd;
 
-    /** 数据6 */
-    @Excel(name = "数据6")
-    private String data6;
+    /** G_Xmean */
+    @Excel(name = "G_Xmean")
+    private String gXmean;
+
+    /** G_Ymean */
+    @Excel(name = "G_Ymean")
+    private String gYmean;
+
+    /** G_Zmean */
+    @Excel(name = "G_Zmean")
+    private String gZmean;
+
+    /** G_Xstd */
+    @Excel(name = "G_Xstd")
+    private String gXstd;
+
+    /** G_Ystd */
+    @Excel(name = "G_Ystd")
+    private String gYstd;
+
+    /** G_Zstd */
+    @Excel(name = "G_Zstd")
+    private String gZstd;
+
+    /** 部位 */
+    @Excel(name = "部位")
+    private String part;
+
+    /** 模式 */
+    @Excel(name = "模式")
+    private String state;
 
     /** 数据状态（0正常 1停用） */
     @Excel(name = "数据状态", readConverterExp = "0=正常,1=停用")
@@ -85,68 +113,131 @@ public class UsrsData extends BaseEntity
     {
         return userName;
     }
-    public void setNickName(String nickName)
+    public void setaXmean(String aXmean)
     {
-        this.nickName = nickName;
+        this.aXmean = aXmean;
     }
 
-    public String getNickName()
+    public String getaXmean()
     {
-        return nickName;
+        return aXmean;
     }
-    public void setData1(String data1)
+    public void setaYmean(String aYmean)
     {
-        this.data1 = data1;
-    }
-
-    public String getData1()
-    {
-        return data1;
-    }
-    public void setData2(String data2)
-    {
-        this.data2 = data2;
+        this.aYmean = aYmean;
     }
 
-    public String getData2()
+    public String getaYmean()
     {
-        return data2;
+        return aYmean;
     }
-    public void setData3(String data3)
+    public void setaZmean(String aZmean)
     {
-        this.data3 = data3;
-    }
-
-    public String getData3()
-    {
-        return data3;
-    }
-    public void setData4(String data4)
-    {
-        this.data4 = data4;
+        this.aZmean = aZmean;
     }
 
-    public String getData4()
+    public String getaZmean()
     {
-        return data4;
+        return aZmean;
     }
-    public void setData5(String data5)
+    public void setaXstd(String aXstd)
     {
-        this.data5 = data5;
-    }
-
-    public String getData5()
-    {
-        return data5;
-    }
-    public void setData6(String data6)
-    {
-        this.data6 = data6;
+        this.aXstd = aXstd;
     }
 
-    public String getData6()
+    public String getaXstd()
     {
-        return data6;
+        return aXstd;
+    }
+    public void setaYstd(String aYstd)
+    {
+        this.aYstd = aYstd;
+    }
+
+    public String getaYstd()
+    {
+        return aYstd;
+    }
+    public void setaZstd(String aZstd)
+    {
+        this.aZstd = aZstd;
+    }
+
+    public String getaZstd()
+    {
+        return aZstd;
+    }
+    public void setgXmean(String gXmean)
+    {
+        this.gXmean = gXmean;
+    }
+
+    public String getgXmean()
+    {
+        return gXmean;
+    }
+    public void setgYmean(String gYmean)
+    {
+        this.gYmean = gYmean;
+    }
+
+    public String getgYmean()
+    {
+        return gYmean;
+    }
+    public void setgZmean(String gZmean)
+    {
+        this.gZmean = gZmean;
+    }
+
+    public String getgZmean()
+    {
+        return gZmean;
+    }
+    public void setgXstd(String gXstd)
+    {
+        this.gXstd = gXstd;
+    }
+
+    public String getgXstd()
+    {
+        return gXstd;
+    }
+    public void setgYstd(String gYstd)
+    {
+        this.gYstd = gYstd;
+    }
+
+    public String getgYstd()
+    {
+        return gYstd;
+    }
+    public void setgZstd(String gZstd)
+    {
+        this.gZstd = gZstd;
+    }
+
+    public String getgZstd()
+    {
+        return gZstd;
+    }
+    public void setPart(String part)
+    {
+        this.part = part;
+    }
+
+    public String getPart()
+    {
+        return part;
+    }
+    public void setState(String state)
+    {
+        this.state = state;
+    }
+
+    public String getState()
+    {
+        return state;
     }
     public void setStatus(String status)
     {
@@ -164,13 +255,20 @@ public class UsrsData extends BaseEntity
             .append("dataId", getDataId())
             .append("userId", getUserId())
             .append("userName", getUserName())
-            .append("nickName", getNickName())
-            .append("data1", getData1())
-            .append("data2", getData2())
-            .append("data3", getData3())
-            .append("data4", getData4())
-            .append("data5", getData5())
-            .append("data6", getData6())
+            .append("aXmean", getaXmean())
+            .append("aYmean", getaYmean())
+            .append("aZmean", getaZmean())
+            .append("aXstd", getaXstd())
+            .append("aYstd", getaYstd())
+            .append("aZstd", getaZstd())
+            .append("gXmean", getgXmean())
+            .append("gYmean", getgYmean())
+            .append("gZmean", getgZmean())
+            .append("gXstd", getgXstd())
+            .append("gYstd", getgYstd())
+            .append("gZstd", getgZstd())
+            .append("part", getPart())
+            .append("state", getState())
             .append("status", getStatus())
             .append("createTime", getCreateTime())
             .append("updateTime", getUpdateTime())

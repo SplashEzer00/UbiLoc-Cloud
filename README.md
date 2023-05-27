@@ -1,18 +1,14 @@
 ## 平台简介
-
-若依是一套全部开源的快速开发平台，毫无保留给个人及企业免费使用。
-
 * 采用前后端分离的模式，微服务版本前端(基于 [RuoYi-Vue](https://gitee.com/y_project/RuoYi-Vue))。
 * 后端采用Spring Boot、Spring Cloud & Alibaba。
 * 注册中心、配置中心选型Nacos，权限认证使用Redis。
-* 流量控制框架选型Sentinel。
 
 ## 运行
 * 基本配置：mysql，redis，nodejs，nacos
 
 * 启动redis（eg：F:\redis\redis-server.exe redis.windows.conf）
 * 启动nacos：配置完双击startup.cmd
-* 运行后端基本：Gateway、System、Auth Application，其余可根据自行需求选择
+* 运行后端基本：Gateway、System、Auth Application运行才能正常运行管理系统
 * 运行前端ui：npm run dev（首次需安装：npm install）
 
 * 账号密码：
@@ -40,8 +36,6 @@ com.MotCap
 ├── MotCap-modules         // 业务模块
 │       └── MotCap-system                              // 系统模块 [9201]
 │       └── MotCap-gen                                 // 代码生成 [9202]
-│       └── MotCap-job                                 // 定时任务 [9203]
-│       └── MotCap-file                                // 文件服务 [9300]
 ├── MotCap-visual          // 图形化管理模块
 │       └── MotCap-visual-monitor                      // 监控中心 [9100]
 ├──pom.xml                // 公共依赖
@@ -79,30 +73,10 @@ com.MotCap
 <table>
     <tr>
         <td><img src="https://oscimg.oschina.net/oscnet/cd1f90be5f2684f4560c9519c0f2a232ee8.jpg"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/1cbcf0e6f257c7d3a063c0e3f2ff989e4b3.jpg"/></td>
-    </tr>
-    <tr>
         <td><img src="https://oscimg.oschina.net/oscnet/up-8074972883b5ba0622e13246738ebba237a.png"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-9f88719cdfca9af2e58b352a20e23d43b12.png"/></td>
     </tr>
     <tr>
         <td><img src="https://oscimg.oschina.net/oscnet/up-39bf2584ec3a529b0d5a3b70d15c9b37646.png"/></td>
         <td><img src="https://oscimg.oschina.net/oscnet/up-4148b24f58660a9dc347761e4cf6162f28f.png"/></td>
-    </tr>
-	<tr>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-b2d62ceb95d2dd9b3fbe157bb70d26001e9.png"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-d67451d308b7a79ad6819723396f7c3d77a.png"/></td>
-    </tr>	 
-    <tr>
-        <td><img src="https://oscimg.oschina.net/oscnet/5e8c387724954459291aafd5eb52b456f53.jpg"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/644e78da53c2e92a95dfda4f76e6d117c4b.jpg"/></td>
-    </tr>
-	<tr>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-8370a0d02977eebf6dbf854c8450293c937.png"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-49003ed83f60f633e7153609a53a2b644f7.png"/></td>
-    </tr>
-	<tr>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-d4fe726319ece268d4746602c39cffc0621.png"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-c195234bbcd30be6927f037a6755e6ab69c.png"/></td>
     </tr>
 </table>
